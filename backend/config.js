@@ -1,7 +1,5 @@
 export const PORT = 5555;
 
-process.on("SIGINT", function () {
-  console.log("\nGracefully shutting down from SIGINT (Ctrl-C)");
-  // some other closing procedures go here
-  process.exit(0);
-});
+export const mongoDBURL = 'mongodb+srv://iclandingin23:cUrHd5X8wEnAc5fB@mern-bookstore.ocg3ohj.mongodb.net/books-collection?retryWrites=true&w=majority'
+
+
