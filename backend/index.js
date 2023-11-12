@@ -15,7 +15,7 @@ app.get("/", (request, response) => {
     .send("Welcome to your first API endpoint in nodejs");
 });
 
-// Route for Save a new Book
+// Route for Save/POST a new Book
 
 app.post("/books", async (request, response) => {
   try {
@@ -37,6 +37,21 @@ app.post("/books", async (request, response) => {
     const book = await Book.create(newBook);
 
     return response.status(201).send(book);
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send(error.message);
+  }
+});
+
+// Route to GET all books from database
+app.get("/books", async (request, response) => {
+  try {
+    const books = await Book.find({});
+
+    return response.status(200).json({
+      count: books.length,
+      data: books,
+    });
   } catch (error) {
     console.log(error.message);
     response.status(500).send(error.message);
