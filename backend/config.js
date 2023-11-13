@@ -1,5 +1,7 @@
-export const PORT = 5555;
+import dotenv from "dotenv";
 
-export const mongoDBURL = 'mongodb+srv://iclandingin23:cUrHd5X8wEnAc5fB@mern-bookstore.ocg3ohj.mongodb.net/books-collection?retryWrites=true&w=majority'
+const env = dotenv.config();
 
+export const PORT = process.env.PORT;
 
+export const mongoDBURL = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_CLUSTER}`;
