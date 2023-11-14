@@ -100,6 +100,7 @@ app.put("/books/:id", async (request, response) => {
   }
 });
 
+// Route to delete a book
 app.delete("/books/:id", async (request, response) => {
   try {
     const { id } = request.params;
