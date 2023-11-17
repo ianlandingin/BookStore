@@ -1,14 +1,18 @@
 // eslint-disable-next-line no-unused-vars
 import { React, useEffect } from "react";
-import axios from "axios";
+import { Routes, Route } from "react-router-dom";
+// import axios from "axios";
 
 const App = () => {
-  useEffect(() => {
-    axios
-      .get("http://localhost:5555/books")
-      .then((response) => console.log(response));
-  }, []);
-  return <div className="bg-red-400 text-white">App</div>;
+  return (
+    <Routes>
+      <Route path="" element={""} />
+      <Route path="" element={""} />
+      <Route path="" element={""} />
+      <Route path="" element={""} />
+      <Route path="" element={""} />
+    </Routes>
+  );
 };
 
 export default App;
