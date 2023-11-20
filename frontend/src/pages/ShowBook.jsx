@@ -10,8 +10,6 @@ const ShowBook = () => {
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
 
-  console.log(book);
-
   useEffect(() => {
     setLoading(true);
     axios
@@ -21,8 +19,8 @@ const ShowBook = () => {
         setLoading(false);
       })
       .catch((error) => {
-        console.log(error?.message);
         setLoading(false);
+        console.log(error?.message);
       });
   }, [id]);
 
@@ -51,11 +49,11 @@ const ShowBook = () => {
             <span>{book?.publishYear}</span>
           </div>
           <div className="my-4">
-            <span className="text-xl mr-4 text-gray-500">Create Time</span>
-            <span>{new Date(book?.CreatedAt).toString()}</span>
+            <span className="text-xl mr-4 text-gray-500">Date Created</span>
+            <span>{new Date(book?.createdAt).toString()}</span>
           </div>
           <div className="my-4">
-            <span className="text-xl mr-4 text-gray-500">Last Update Time</span>
+            <span className="text-xl mr-4 text-gray-500">Last Updated</span>
             <span>{new Date(book?.updatedAt).toString()}</span>
           </div>
         </div>
